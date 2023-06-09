@@ -9,5 +9,6 @@ public interface IAccountRepo extends JpaRepository<Account,Long> {
     Account login( String username, String password);
     @Query(nativeQuery = true,value = "SELECT * from account where username = :username ")
     Account findAccountByUsername( String username);
-
+    @Query(nativeQuery = true,value = "SELECT * from account where id = :id ")
+    Account findById( long id);
 }

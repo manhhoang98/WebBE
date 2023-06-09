@@ -23,7 +23,7 @@ public class AccountService {
     }
 
     public Account  findById(long id ){
-        return iAccountRepo.findById(id).get();
+        return iAccountRepo.findById(id);
     }
 
     public Account login(String username,String password){

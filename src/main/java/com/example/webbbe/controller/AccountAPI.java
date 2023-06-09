@@ -69,8 +69,12 @@ public class AccountAPI {
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
-    @PutMapping("{id}")
+    @PutMapping("/updateAccount")
     public ResponseEntity<?> upDateAccount(@RequestBody Account account){
+        Roles roles = new Roles();
+        roles.setId(2L);
+        roles.setName("ROLES_USER");
+        account.setRoles(roles);
         accountService.save(account);
         return new ResponseEntity<>(account,HttpStatus.OK);
     }
